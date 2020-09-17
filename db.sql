@@ -1,0 +1,3 @@
+CREATE DATABASE abc;
+USE abc;
+CREATE TABLE users(id int(11) NOT NULL PRIMARY KEY, username VARCHAR(20),email VARCHAR(50), password VARCHAR(20));
