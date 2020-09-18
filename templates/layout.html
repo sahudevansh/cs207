@@ -31,6 +31,11 @@ http://www.tooplate.com/view/2099-scenic
 
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl-carousel.css') }}"/>
 
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer1.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer2.css') }}"/>
+
+
 <!-- MAIN CSS -->
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tooplate-style.css') }}"/>
 
@@ -58,7 +63,11 @@ http://www.tooplate.com/view/2099-scenic
                     <span class="icon icon-bar"></span>
                </button>
                <!-- lOGO -->
-               <a href="{{ url_for('home') }}" class="navbar-brand">IIT INDORE</a>
+               <a href="{{ url_for('home') }}">
+                    <img  style="width: 100px;height: 100px;" src="{{ url_for('static', filename='img/iitilogo.png') }}">
+               </a>
+               
+              
           </div>
 
           <!-- MENU LINKS -->
@@ -91,9 +100,9 @@ http://www.tooplate.com/view/2099-scenic
                <div class="col-md-8 col-sm-12">
                     <div class="home-text">
                          <h1>WELCOME TO IIT INDORE</h1>
-                         <p>VIKRAM SARABHAI HALL OF RESIDENCE</p>
+                         <p>{{session['hostelname']}}</p>
                          <ul class="section-btn">
-                              <a href="#con" class="smoothScroll"><span data-hover="Discover More">Discover More</span></a>
+                              <a href="#about" class="smoothScroll"><span data-hover="Discover More">Discover More</span></a>
                          </ul>
                     </div>
                </div>
@@ -109,57 +118,60 @@ http://www.tooplate.com/view/2099-scenic
 </section>
 
 
+<section id="about" class="parallax-section">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                    <div class="about-info" style="color: blue">
+                         <h3>IIT INDORE</h3>
+                         <h1>भारतीय प्रौद्योगिकी संस्थान इंदौर <br>
+                          Indian Institute of Technology Indore <br></h1>
+                          <hr>
+                         <h1 style="color:red;font-weight: bold;">{{session['hostelname']}}</h1><hr>
+                    </div>
+               </div>
+
+          </div>
+     </div>
+</section>
+
 
 {% block body %}{% endblock %}
 
+<!-- FOOTER -->
 
-<footer id="con">
-     <div  class="container">
-          <div class="row">
-
-               <div class="col-md-5 col-sm-6">
-                    <h2>Digital Studio</h2>
-                    <p>321 Donec et justo id risus, Malesuada pharetra,<br> Tristique vestibulum,<br> Lorem ipsum dolor</p>
-                    
-                    
-               </div>
-
-               <div class="col-md-4 col-sm-6">
-                    <div class="footer-info">
-                         <h2>Keep in touch</h2>
-                         <p><a href="tel:010-090-0780">010-090-0780</a></p>
-                         <p><a href="mailto:info@company.com">info@company.com</a></p>
-                         <p><a href="#">Our Location</a></p>
-                    </div>
-               </div>
-
-               <div class="col-md-3 col-sm-12">
-                         
-                    <h2>About Us</h2>
-                    <p>Sed vestibulum posuere ante, eget blandit metus. Morbi sodales feugiat erat, et placerat sapien suscipit ut.</p>
-                    <ul class="social-icon">
-                         <li><a href="#" class="fa fa-twitter"></a></li>
-                         <li><a href="#" class="fa fa-facebook"></a></li>
-                         <li><a href="#" class="fa fa-instagram"></a></li>
-                         <li><a href="#" class="fa fa-linkedin"></a></li>
+<footer style="background-color: black;">
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <ul class="footer-nav-left">
+                        <li>Contact: &nbsp;0731-2438700, Ext. 829</li>
+                        <li>E-mail: &nbsp;hostel@iiti.ac.in</li>
+                        <li>Web: &nbsp; <a href="http://hostel.iiti.ac.in/">hostel.iiti.ac.in</a></li>
                     </ul>
-                    
-               </div>
-
-               <div class="clearfix"></div>
-
-               <div class="col-md-12 col-sm-12">
-                    <div class="copyright-text">
-                         <p>Copyright © 2018 Company Name 
-                         
-                         | Design: Tooplate</p>
-                    </div>
-               </div>
+                </div>
+                
+                <div class="col span-1-of-3">
+                    <ul class="footer-nav-center">
+                        <li><a href="http://iiti.ac.in/"> IIT Indore Official Site</a></li>
+                        <li><a href="https://gymkhana-2a704.firebaseapp.com/"> Gymkhana IIT Indore</a></li>
+                    </ul>
+                </div>
                
-          </div>
-     </div>
+                
+                <div class="col span-1-of-3">
+                    <ul class="footer-nav-right">
+                        <li>Security Supervisor:&nbsp; +91-6265224771</li>
+                        <li>Ambulance: &nbsp; 7509062832</li>
+                        <li>Medical: &nbsp; 0731-2438700, Ext. 987, 776</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Copyright &copy; IIT Indore. All rights reserved.
+                </p>
+            </div>
 </footer>
-
 
 <!-- SCRIPTS -->
 
