@@ -261,7 +261,7 @@ a:hover, a:active, a:focus {
 
 .custom-navbar {
   margin-bottom: 0;
-  background-color: #4dc47d;
+  background-color: #4d96c4;
   padding: 20px 0;
 }
 
@@ -331,7 +331,7 @@ a:hover, a:active, a:focus {
     background: 0 0; 
   }
   .custom-navbar.top-nav-collapse {
-    background: #4dc47d;
+    background: #4db6c4;
     padding: 15px 0;
   }
 }
