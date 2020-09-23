@@ -1,3 +1,4 @@
-CREATE DATABASE abc;
 USE abc;
-CREATE TABLE users(id int(11) NOT NULL PRIMARY KEY, username VARCHAR(20),email VARCHAR(50), password VARCHAR(20));
+CREATE TABLE users(username VARCHAR(50) NOT NULL PRIMARY KEY, email VARCHAR(50),password VARCHAR(50),name VARCHAR(50),rollno TEXT(50),branch VARCHAR(50),hostelname VARCHAR(100),roomno VARCHAR(50),mobileno TEXT(100));
+
+CREATE TABLE if not exists complaints(complaint_id INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(100), subject TEXT,category TEXT,time_of_availability VARCHAR(100),uergency TEXT,details text);
