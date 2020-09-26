@@ -130,7 +130,7 @@ http://www.tooplate.com/view/2099-scenic
                          <h1>भारतीय प्रौद्योगिकी संस्थान इंदौर <br>
                           Indian Institute of Technology Indore <br></h1>
                           <hr>
-                          {% if not session.show %}
+                          {% if session.show %}
                         <h1 style="color:red;font-weight: bold;">HALL OF RESIDENCE</h1><hr>
                           {% else %}
                          <h1 style="color:red;font-weight: bold;">{{session['hostelname']}} HALL OF RESIDENCE</h1><hr>
