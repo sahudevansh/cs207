@@ -33,14 +33,17 @@ def send_mail(reciver,passw):
 def init_app():
     session['hostelname'] = 'WELCOME TO IIT INDORE'
     session['show'] = True
+    session['logged_in'] =False
 
 @app.route('/')
 def home():
+    session['show'] = True
     session['hostelname'] = 'WELCOME TO IIT INDORE'
     return render_template('home.html')
     #return redirect(url_for('login'))
 @app.route('/apj')
 def apj():
+    session['show'] = False
     session['hostelname']='A. P. J ABDUL KALAM'
     return render_template('apj.html')
 @app.route('/vsb')
@@ -164,11 +167,12 @@ def forgotpassword():
     return render_template('forgotpassword.html')
 @app.route('/complaints',methods=['GET','POST'])
 def complaints():
+
     if (session['logged_in'] == False):
         flash('PLEASE LOG IN FIRST')
         return redirect(url_for('login'))
     session['hostelname']='REGISTER YOUR COMPLAINTS'
-    session['show']=False
+    session['show']=True
     if(request.method=='POST'):
         subject=request.form.get('subject')
         category=request.form.get('category')
@@ -190,7 +194,7 @@ def suggetions():
         flash('PLEASE LOG IN FIRST')
         return redirect(url_for('login'))
     session['hostelname']='PROVIDE YOUR VALUEABLE SUGGETIONS'
-    session['show']=False
+    session['show']=True
     if(request.method=='POST'):
         subject=request.form.get('subject')
         category=request.form.get('category')
